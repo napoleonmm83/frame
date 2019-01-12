@@ -1,20 +1,19 @@
 {
-  "name": "electron-quick-start",
+  "name": "frame",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "a nice picture show",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/napoleonmm83/frame",
   "keywords": [
     "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "frame",
+    "image",
+    "show"
   ],
-  "author": "GitHub",
+  "author": "napoleonmm83",
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^4.0.1"
