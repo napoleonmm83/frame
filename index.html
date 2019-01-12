@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>FRAME</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 <script>window.$ = window.jQuery = require('./jquery.min.js');</script>
 </head>
@@ -26,11 +26,11 @@ fs.readdir(dirPath, (err, dir)=>{
         let fileName = dir[i];
     	var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
     	if(!allowedExtensions.exec(fileName)){
-        
+
     }else{
-    
-   
-  
+
+
+
         let filePath=dirPath+"/"+fileName;
        // console.log("A: "+fileName);
         array.push(fileName);
