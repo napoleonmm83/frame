@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+<script>window.$ = window.jQuery = require('./jquery.min.js');</script>
+</head>
+  </head>
+  <body bgcolor="#000">
+
+   <div id="frame"  style="position:fixed; height: 100%; width: 100%; top:0;left 0; vertical-align:middle;
+  text-align:center;">
+   <img id="thumbnail" src="" style="height: 100%">
+
+</div>
+    <script>
+	var myVar = setInterval(myTimer, 10000);
+	function myTimer() {
+	var fs = require('fs');
+	var dirPath = './pics/';
+let  content = "";
+fs.readdir(dirPath, (err, dir)=>{
+        var array=[];
+    for(var i=0; i<dir.length; i++){
+        let fileName = dir[i];
+    	var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+    	if(!allowedExtensions.exec(fileName)){
+        
+    }else{
+    
+   
+  
+        let filePath=dirPath+"/"+fileName;
+       // console.log("A: "+fileName);
+        array.push(fileName);
+}
+    }
+	console.log(array);
+
+	i = Math.floor(Math.random()*array.length);
+var url = (dirPath+array[i]);
+
+console.log(url);
+
+let image = new Image();
+image.onload = function () {
+	 console.log ("pic Height: " + this.naturalHeight);
+	 console.log ("pic Width: " + this.naturalWidth);
+	 // Mach was mit dem Bild
+};
+image.src = url;
+
+
+
+
+$(function(){
+  $( "#thumbnail" ).fadeOut( "slow", function() {
+  $('#thumbnail').attr('src',url);
+  });
+$( "#thumbnail" ).fadeIn( "slow", function() {
+  //$('#thumbnail').attr('src',url);
+});
+});
+
+
+
+
+})
+
+}
+
+ window.onload = myTimer;
+
+      require('./renderer.js')
+
+    </script>
+
+
+  </body>
+</html>
