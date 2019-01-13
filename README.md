@@ -37,3 +37,9 @@ Dietpi-config -> 9 AutoStart Options -> 2 Automatic login(recomended) -> Exit
 Install Node.js
 
 Software Additional -> Node.js -> Install
+
+Install Electron
+
+````
+npm i -D electron@latest
+````
