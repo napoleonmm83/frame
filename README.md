@@ -51,6 +51,10 @@ sudo nano  /etc/apt/sources.list
 Add: deb http://http.us.debian.org/debian/ testing non-free contrib main
 apt-get update
 apt-get install libc6-dev
+
+sudo nano  /etc/apt/sources.list
+remove: deb http://http.us.debian.org/debian/ testing non-free contrib main
+
 ````
 
 
