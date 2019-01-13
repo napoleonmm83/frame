@@ -25,3 +25,11 @@ Now Install XFCE Desktop wit dietpi-software
 dietpi-software
 ````
 Software Optimized ->  XFCE 
+
+Set Desktop at autostart
+
+````
+dietpi-software
+````
+
+Dietpi-config -> 9 AutoStart Options -> 2 Automatic login(recomended)
