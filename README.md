@@ -87,7 +87,26 @@ $allow_create_folder = true; // Set to false to disable folder creation
 $allow_direct_link = true; // Set to false to only allow downloads and not direct link
 
 ````
+change owner of folder pics
 
+````
+chown -R www-data:www-data /var/www/frame/pics
+
+````
+
+Configure Apache to 
+````
+sudo nano /etc/apache2/sites-enabled/000-default.conf
+
+change 
+DocumentRoot /var/www/html
+ to
+DocumentRoot /var/www/frame/pics
+
+sudo /etc/init.d/apache2 restart
+````
+
+now you can open your raspberry ip ore hostname to browser to upload pictures
 
 
 
