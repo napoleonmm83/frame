@@ -43,3 +43,11 @@ Install Electron
 ````
 npm i -D electron@latest
 ````
+
+Install Frame
+
+````
+cd /var/www
+
+
+````
