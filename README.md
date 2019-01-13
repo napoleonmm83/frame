@@ -77,7 +77,16 @@ sudo nano /var/www/frame/pics/index.php
 $PASSWORD = 'ch@ng3me123$'; //CHange to your password
 
 ````
+it has also options to change for your needs
 
+````
+$allow_delete = true; // Set to false to disable delete button and delete POST request.
+$delete_confirm = true; // Set to false to disable delete confirmation alert
+$allow_upload = true; // Set to true to allow upload files
+$allow_create_folder = true; // Set to false to disable folder creation
+$allow_direct_link = true; // Set to false to only allow downloads and not direct link
+
+````
 
 
 
