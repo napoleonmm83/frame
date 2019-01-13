@@ -47,7 +47,12 @@ npm i -D electron@latest
 Install Frame
 
 ````
+sudo apt-get install git
 cd /var/www
+cd frame
+npm install
+DISPLAY=:0 && npm start
+
 
 
 ````
