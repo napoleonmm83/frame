@@ -44,10 +44,21 @@ Install Electron
 npm i -D electron@latest
 ````
 
+Install libc
+
+````
+sudo nano  /etc/apt/sources.list
+Add: deb http://http.us.debian.org/debian/ testing non-free contrib main
+apt-get update
+apt-get install libc6-dev
+````
+
+
+
 Install Frame
 
 ````
-sudo apt-get install git
+sudo apt-get install git libnss3 libxss1
 cd /var/www
 cd frame
 npm install
