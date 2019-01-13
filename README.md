@@ -107,3 +107,9 @@ Starting your Frame with PM2
 ````
 pm2 start frame.sh
 ````
+
+Enable restarting of the Framer script.
+
+````
+pm2 save
+````
