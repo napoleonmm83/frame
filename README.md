@@ -18,3 +18,10 @@ sudo apt-get install -t stretch php7.0 php7.0-curl php7.0-gd php7.0-fpm php7.0-c
 ````
 sudo apt-get install -t stretch libapache2-mod-php7.0 -y
 ````
+
+Now Install XFCE Desktop wit dietpi-software
+
+````
+dietpi-software
+````
+Software Optimized ->  XFCE 
