@@ -67,3 +67,43 @@ DISPLAY=:0 && npm start
 
 
 ````
+
+Install PM2 using NPM
+
+````
+sudo npm install -g pm2
+````
+
+Starting PM2 on Boot
+To make sure PM2 can do it's job when (re)booting your operating system, it needs to be started on boot. Luckily, PM2 has a handy helper for this.
+
+````
+
+pm2 startup
+````
+
+Make a start script.
+
+````
+cd ~
+nano frame.sh
+````
+
+Add the following lines:
+
+````
+cd /var/www/frame
+DISPLAY=:0 npm start
+````
+
+Save and close, using the commands CTRL-O and CTRL-X. Now make sure the shell script is executable by performing the following command:
+
+````
+chmod +x frame.sh
+````
+
+Starting your Frame with PM2
+
+````
+pm2 start frame.sh
+````
