@@ -60,13 +60,28 @@ Install Frame
 ````
 sudo apt-get install git libnss3 libxss1
 cd /var/www
+git clone https://github.com/napoleonmm83/frame
 cd frame
 npm install
-DISPLAY=:0 && npm start
 
+sudo nano /var/www/frame/pics/index.php
+````
 
+For Fileuplod use simple-file-manager
+https://github.com/gwendal-orinel/simple-file-manager
+
+first change password
 
 ````
+sudo nano /var/www/frame/pics/index.php
+$PASSWORD = 'ch@ng3me123$'; //CHange to your password
+
+````
+
+
+
+
+
 
 Install PM2 using NPM
 
