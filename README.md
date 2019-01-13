@@ -110,6 +110,13 @@ now you can open your raspberry ip ore hostname to browser to upload pictures
 
 
 
+Autohiding the Mouse Pointer
+Install unclutter:
+
+````
+sudo apt-get install unclutter
+````
+
 
 Install PM2 using NPM
 
@@ -129,12 +136,13 @@ Make a start script.
 
 ````
 cd ~
-nano frame.sh
+sudo nano frame.sh
 ````
 
 Add the following lines:
 
 ````
+unclutter -display :0 -idle 3 -root -noevents
 cd /var/www/frame
 DISPLAY=:0 npm start
 ````
