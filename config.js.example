@@ -4,7 +4,7 @@
 
 
 let uid = 'a user frome firebase';
-var serviceAccount = require("./from firebase.json");
+var serviceAccount = require("./firebase.json");
 
 
 var firebaseConfig = {
