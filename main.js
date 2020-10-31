@@ -6,7 +6,7 @@ const path = require('path')
 
 const fs = require('fs')
 
-const folderName = './picstest'
+const folderName = './images'
 
 try {
   if (!fs.existsSync(folderName)) {
