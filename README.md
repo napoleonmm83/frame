@@ -19,7 +19,7 @@ npm start
 
 ## copy firebase.json to Raspberry
 ```bash
-scp friebase.json pi@192.168.1.3:
+scp friebase.json pi@192.168.1.3:frame
 ```
 ## License
 
