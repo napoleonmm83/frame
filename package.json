@@ -1,12 +1,15 @@
 {
-  "name": "electron-quick-start",
+  "name": "frame",
   "version": "1.0.0",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/electron/electron-quick-start.git"
+  },
   "keywords": [
     "Electron",
     "quick",
@@ -17,6 +20,21 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^10.1.4"
-  }
+    "electron": "^10.1.5"
+  },
+  "dependencies": {
+    "@google-cloud/storage": "^5.3.0",
+    "express": "^4.17.1",
+    "firebase": "^7.24.0",
+    "firebase-admin": "^9.3.0",
+    "fs": "0.0.1-security",
+    "got": "^11.8.0",
+    "imurmurhash": "^0.1.4",
+    "is-typedarray": "^1.0.0",
+    "jquery": "^3.5.1"
+  },
+  "bugs": {
+    "url": "https://github.com/electron/electron-quick-start/issues"
+  },
+  "homepage": "https://github.com/electron/electron-quick-start#readme"
 }

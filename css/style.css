@@ -1,0 +1,14 @@
+.frame{
+  position:fixed;
+   height: 100%;
+   width: 100%;
+   top:0;
+   left: 0;
+   vertical-align:middle;
+}
+
+.pic{
+
+   height: 100%;
+
+}

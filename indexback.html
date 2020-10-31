@@ -12,7 +12,7 @@
   <body bgcolor="#000">
     <div id="frame" class="frame" >
     text-align:center;">
-
+     <img id="thumbnail" src="" class="pic">
   </div>
 
     <!-- You can also require other files to run in this process -->
@@ -27,52 +27,20 @@
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-storage.js"></script>
   </body>
     <script src="./renderer.js"></script>
-    <script src="./config.js"></script>
 
 <script>
 
 const got = require("got");
 const { createWriteStream } = require("fs");
 var fs = require('fs');
-var admin = require("firebase-admin");
 
-
-
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://my-piframe.firebaseio.com"
-});
-
-
-
-
-admin.auth().createCustomToken(uid)
-  .then(function(customToken) {
-    firebase.auth().signInWithCustomToken(customToken).catch(function(error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // ...
-  });
-
-  })
-  .catch(function(error) {
-    console.log('Error creating custom token:', error);
-  });
-
-  admin.auth().getUser(uid)
-    .then(function(userRecord) {
-      // See the UserRecord reference doc for the contents of userRecord.
-      console.log('Successfully fetched user data:', userRecord.toJSON());
-    })
-    .catch(function(error) {
-      console.log('Error fetching user data:', error);
-    });
-
-
-
-
-
+var firebaseConfig = {
+  apiKey: "AIzaSyA3oQk3_wKpMJP2NHeBtY0QYH5cLQlzPbM",
+    authDomain: "my-piframe.firebaseapp.com",
+    databaseURL: "https://my-piframe.firebaseio.com",
+    projectId: "my-piframe",
+    storageBucket: "my-piframe.appspot.com",
+};
 firebase.initializeApp(firebaseConfig);
 
 // Get a reference to the storage service, which is used to create references in your storage bucket
@@ -81,9 +49,6 @@ var storageRef = storage.ref();
 // Create a reference under which you want to list
 var listRef = storageRef.child('images');
 
-setInterval(downloadnefiles, 300000);
-
-function downloadnefiles(){
 
 var dirPath = './images/';
 let content = "";
@@ -113,13 +78,39 @@ listRef.listAll().then(function(res) {
   });
 
   res.items.forEach(function(itemRef) {
-    console.log(itemRef)
-
-    var item = itemRef.location.path.replace("images/", "");
-firebase_array.push(item)
 
 
 
+
+    storageRef.child(itemRef.location.path).getDownloadURL().then(function(url) {
+    console.log(url)
+
+    const fileName = "./"+itemRef.location.path;
+
+    const downloadStream = got.stream(url);
+    const fileWriterStream = createWriteStream(fileName);
+
+    downloadStream
+      .on("downloadProgress", ({ transferred, total, percent }) => {
+        const percentage = Math.round(percent * 100);
+      //  console.error(`progress: ${transferred}/${total} (${percentage}%)`);
+      })
+      .on("error", (error) => {
+        console.error(`Download failed: ${error.message}`);
+      });
+
+    fileWriterStream
+      .on("error", (error) => {
+        console.error(`Could not write file to system: ${error.message}`);
+      })
+      .on("finish", () => {
+        console.log(`File downloaded to ${fileName}`);
+      });
+
+    downloadStream.pipe(fileWriterStream);
+
+
+});
   });
 }).catch(function(error) {
   // Uh-oh, an error occurred!
@@ -180,13 +171,12 @@ if (typeof local_array !== 'undefined' && local_array.length == 0){
   })
 } else{
 
-local_array.forEach(filechecker_local)
+  local_array.forEach(filechecker)
 
-function filechecker_local(element){
+function filechecker(element){
   console.log(element)
 
   var arry_includes = firebase_array.includes(element)
-  console.log(arry_includes)
 
   if ( arry_includes == true){
     //// everything ok dont need to to anything
@@ -202,60 +192,27 @@ function filechecker_local(element){
     console.error(err)
   }
   }
-}
-
-firebase_array.forEach(filechecker_cloud)
-function filechecker_cloud(element){
-
-  var arry_includes = local_array.includes(element)
-  console.log(arry_includes)
-  if ( arry_includes == true){
-    //// everything ok dont need to to anything
-  }
-  if ( arry_includes == false){
-
-
-    storageRef.child("images/"+element).getDownloadURL().then(function(url) {
-    console.log(url)
-
-    const fileName = "./images/"+element;
-
-    const downloadStream = got.stream(url);
-    const fileWriterStream = createWriteStream(fileName);
-
-    downloadStream
-      .on("downloadProgress", ({ transferred, total, percent }) => {
-        const percentage = Math.round(percent * 100);
-      //  console.error(`progress: ${transferred}/${total} (${percentage}%)`);
-      })
-      .on("error", (error) => {
-        console.error(`Download failed: ${error.message}`);
-      });
-
-    fileWriterStream
-      .on("error", (error) => {
-        console.error(`Could not write file to system: ${error.message}`);
-      })
-      .on("finish", () => {
-        console.log(`File downloaded to ${fileName}`);
-      });
-
-    downloadStream.pipe(fileWriterStream);
-
-
-});
-  }
 
 
 }
+
+
+
+
 }
+
+
+
+
+
+
 
 })
 
 
 
 
-}
+
 
 
 
