@@ -48,10 +48,24 @@ image.onload = function () {
 image.src = url;
 var picdiv = document.getElementById('frame');
 
-$(document).ready(function(){
-  $('#frame').css('background-image', 'url(' + url + ')');
-  $("#frame").fadeIn("slow");
+unfade(picdiv,url)
+//fade(picdiv,url)
+
+
+
+function unfade(element,url) {
+    element.style.display = 'block';
+        element.style.backgroundSize ="contain";
+        element.style.backgroundRepeat="no-repeat";
+        element.style.backgroundPosition = "center center";
+
+        $(document).ready(function(){
+          $('#frame').css('background-image', 'url(' + url + ')');
+          $("#frame").fadeIn("slow");
 });
+
+
+}
 
 
 
