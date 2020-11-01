@@ -101,3 +101,8 @@ function fade(element) {
 }
 
 window.onload = myTimer;
+
+function hideCursor(){
+    document.body.style.cursor = "none";
+}
+setTimeout(hideCursor,1000);
