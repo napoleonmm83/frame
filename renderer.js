@@ -9,6 +9,7 @@
 // TODO: Replace with your app's config object
 
 
+
 var myVar = setInterval(myTimer, 10000);
 function myTimer() {
 var fs = require('fs');
@@ -33,8 +34,6 @@ fs.readdir(dirPath, (err, dir)=>{
 console.log(array);
 
 
-
-
 i = Math.floor(Math.random()*array.length);
 var url = (dirPath+array[i]);
 
@@ -49,50 +48,10 @@ image.onload = function () {
 image.src = url;
 var picdiv = document.getElementById('frame');
 
-
-
-
-unfade(picdiv,url)
-//fade(picdiv,url)
-
-
-
-
-
-function unfade(element,url) {
-    var op = 0.1;  // initial opacity
-
-    element.style.display = 'block';
-    var timer = setInterval(function () {
-        if (op >= 1){
-            clearInterval(timer);
-        }
-        element.style.opacity = op;
-        element.style.backgroundImage="url('"+url+"')";
-        element.style.backgroundSize ="contain";
-        element.style.backgroundRepeat="no-repeat";
-        element.style.backgroundPosition = "center center";
-        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-        op += op * 0.1;
-    }, 50);
-}
-
-function fade(element) {
-    var op = 1;  // initial opacity
-    var timer = setInterval(function () {
-        if (op <= 0.1){
-            clearInterval(timer);
-
-            element.style.display = 'none';
-        }
-        element.style.opacity = op;
-        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-        op -= op * 0.1;
-    }, 50);
-}
-
-
-
+$(document).ready(function(){
+  $('#frame').css('background-image', 'url(' + url + ')');
+  $("#frame").fadeIn("slow");
+});
 
 
 
