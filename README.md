@@ -21,6 +21,22 @@ npm start
 ```bash
 scp friebase.json pi@192.168.1.3:frame
 ```
+
+
+```bash
+
+cd /home/pi/frame
+export DISPLAY=:0
+npm start
+
+
+
+@reboot sh /home/pi/frame.sh
+
+```
+
+
+
 ## License
 
 [CC0 1.0 (Public Domain)](LICENSE.md)
