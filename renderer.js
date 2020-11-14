@@ -52,19 +52,20 @@ unfade(picdiv,url)
 //fade(picdiv,url)
 
 
-function unfade(element,url,height,width) {
+function unfade(element,url) {
 
+
+    element.style.display = 'block';
+        element.style.backgroundSize ="contain";
+        element.style.backgroundRepeat="no-repeat";
+        element.style.backgroundPosition = "center center";
 
         $(function(){
-            $("#frame").removeClass("animation");
-            void element.offsetWidth;
-            $("#frame").addClass("animation");
           $( "#frame" ).fadeOut( "slow", function() {
-        $("#frame").attr("src",url )
+          $('#frame').css('background-image', 'url(' + url + ')');
           });
         $( "#frame" ).fadeIn( "slow", function() {
-
-
+          //$('#thumbnail').attr('src',url);
         });
         });
 

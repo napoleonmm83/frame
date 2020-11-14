@@ -8,87 +8,12 @@
     <title>Hello World!</title>
     <link rel="stylesheet" href="css/style.css">
 
-
-<style>
-.image-wrap {
-  display: block;
-
-  object-fit: cover;
-
-  margin: 0 auto;
-  overflow: hidden;
-
-}
-
-
-
-.animation {
-
-  height: 100%;
-   width: 100%;
-   top:0;
-   left: 0;
-   vertical-align:middle;
-
- position:fixed;
-
-  object-fit: cover;
-
-  animation: move 20s ease;
-  /* Add infinite to loop. */
-
-  -ms-animation: move 20s ease;
-  -webkit-animation: move 20s ease;
-  -0-animation: move 20s ease;
-  -moz-animation: move 20s ease;
-
-}
-
-@-webkit-keyframes move {
-  0% {
-    -webkit-transform-origin: bottom left;
-    -moz-transform-origin: bottom left;
-    -ms-transform-origin: bottom left;
-    -o-transform-origin: bottom left;
-    transform-origin: bottom left;
-    transform: scale(1.0);
-    -ms-transform: scale(1.0);
-    /* IE 9 */
-
-    -webkit-transform: scale(1.0);
-    /* Safari and Chrome */
-
-    -o-transform: scale(1.0);
-    /* Opera */
-
-    -moz-transform: scale(1.0);
-    /* Firefox */
-  }
-  100% {
-
-    transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    /* IE 9 */
-
-    -webkit-transform: scale(1.2);
-    /* Safari and Chrome */
-
-    -o-transform: scale(1.2);
-    /* Opera */
-
-    -moz-transform: scale(1.2);
-    /* Firefox */
-  }
-}
-
-</style>
   </head>
   <body bgcolor="#000">
+    <div id="frame" class="frame" >
 
-    <div id="image-wrap" class="image-wrap">
-      <img id="frame" >
-    </div>
 
+  </div>
   <script>window.$ = window.jQuery = require('./jquery-3.5.1.min.js');</script>
     <!-- You can also require other files to run in this process -->
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
