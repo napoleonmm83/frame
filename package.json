@@ -19,7 +19,7 @@
     "electron": "^10.1.5"
   },
   "dependencies": {
-    "firebase-admin": "^9.4.0",
+    "firebase-admin": "^9.4.1",
     "select-random-file": "^1.1.0"
   }
 }
