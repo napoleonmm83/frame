@@ -65,9 +65,9 @@ function unfade(element,url) {
         element.style.backgroundSize ="contain";
         element.style.backgroundRepeat="no-repeat";
         element.style.backgroundPosition = "center center";
-        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        element.style.opacity =  op * 100 ;
         op += op * 0.1;
-    }, 50);
+    }, 100);
 }
 })
 }
