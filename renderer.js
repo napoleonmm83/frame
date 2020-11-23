@@ -53,29 +53,25 @@ unfade(picdiv,url)
 
 
 function unfade(element,url) {
-
+    var op = 0.1;  // initial opacity
 
     element.style.display = 'block';
+    var timer = setInterval(function () {
+        if (op >= 1){
+            clearInterval(timer);
+        }
+        element.style.opacity = op;
+        element.style.backgroundImage="url('"+url+"')";
         element.style.backgroundSize ="contain";
         element.style.backgroundRepeat="no-repeat";
         element.style.backgroundPosition = "center center";
-
-        $(function(){
-          $( "#frame" ).fadeOut( "slow", function() {
-          $('#frame').css('background-image', 'url(' + url + ')');
-          });
-        $( "#frame" ).fadeIn( "slow", function() {
-          //$('#thumbnail').attr('src',url);
-        });
-        });
-
+        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op += op * 0.1;
+    }, 50);
 }
-
-
-
 })
-
 }
+
 
 window.onload = myTimer;
 
