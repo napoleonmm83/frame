@@ -51,7 +51,7 @@ var picdiv = document.getElementById('frame');
 unfade(picdiv,url)
 //fade(picdiv,url)
 
-
+/*
 function unfade(element,url) {
     var op = 0.1;  // initial opacity
 
@@ -66,9 +66,27 @@ function unfade(element,url) {
         element.style.backgroundRepeat="no-repeat";
         element.style.backgroundPosition = "center center";
         element.style.opacity =  op * 1 ;
+        element.style.transition = "background 4s ease-in";
         op += op * 0.1;
     }, 50);
 }
+*/
+
+
+function unfade(element,url) {
+element.classList.remove("fade-in");
+  element.classList.add('fade-in');
+    element.style.display = 'block';
+
+
+        element.style.backgroundImage="url('"+url+"')";
+        element.style.backgroundSize ="contain";
+        element.style.backgroundRepeat="no-repeat";
+        element.style.backgroundPosition = "center center";
+        element.style.animation = "animation: fadeInFromNone 3.5s ease-in";
+
+}
+
 })
 }
 
