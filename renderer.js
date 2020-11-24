@@ -11,6 +11,11 @@
 
 
 var myVar = setInterval(myTimer, 10000);
+
+
+
+
+
 function myTimer() {
 var fs = require('fs');
 var dirPath = './images/';
@@ -47,7 +52,8 @@ image.onload = function () {
 };
 image.src = url;
 var picdiv = document.getElementById('frame');
-
+picdiv.classList.remove("fade-in");
+picdiv.classList.add('fade-out');
 unfade(picdiv,url)
 //fade(picdiv,url)
 
@@ -74,7 +80,7 @@ function unfade(element,url) {
 
 
 function unfade(element,url) {
-element.classList.remove("fade-in");
+picdiv.classList.remove("fade-out");
   element.classList.add('fade-in');
     element.style.display = 'block';
 
