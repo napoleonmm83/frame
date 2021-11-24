@@ -26,8 +26,7 @@ function createWindow () {
     height: 1080,
     frame:false,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js'),
-      nodeIntegration: true
+      preload: path.join(__dirname, 'preload.js'),      
     }
   })
 //mainWindow.webContents.openDevTools()
@@ -36,7 +35,7 @@ function createWindow () {
 mainWindow.maximize();
 mainWindow.setKiosk(true);
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+ mainWindow.webContents.openDevTools()
 }
 
 // This method will be called when Electron has finished
