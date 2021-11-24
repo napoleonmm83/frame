@@ -41,7 +41,7 @@ function getLocalArray(){
                console.log("A: "+fileName);
               local_array.push(fileName);
               resolve(local_array)
-            
+
           }
       }
   })
@@ -58,23 +58,23 @@ function getLocalArray(){
        var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
        if (!allowedExtensions.exec(file.name)) {} else {
          var destFileName = file.name ;
-         var item = destFileName.replace("images/", "");             
-         remote_array.push(item);    
+         var item = destFileName.replace("images/", "");
+         remote_array.push(item);
        }
-         
+
      });
     }
-  
-   
+
+
 
 function compareArrays(){
   return new Promise((resolve, reject) => {
-   
+
     local_array.filter(onlyUnique)
-    remote_array.filter(onlyUnique)   
+    remote_array.filter(onlyUnique)
     console.log(local_array)
-    console.log(remote_array)  
-    
+    console.log(remote_array)
+
     local_array.forEach(filechecker_local)
     remote_array.forEach(filechecker_cloud)
     local_array = [];
@@ -134,11 +134,11 @@ function filechecker_local(element) {
 
 
 
-function filechecker_cloud(element) { 
+function filechecker_cloud(element) {
 
   var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
     if (!allowedExtensions.exec(element)) {} else {
-  
+
   //  console.log(element)
   var arry_includes = local_array.includes(element)
   //console.log(arry_includes)
@@ -147,20 +147,20 @@ function filechecker_cloud(element) {
      // console.log("everything ok dont need to to anything --  remote")
   }
   if (arry_includes == false) {
-    
+
     console.log("need to download - Cloud")
-    //downloadRemoteFiles()    
+    //downloadRemoteFiles()
      //downloadFile(element)
-     
+
       const destFileName = 'images/' + element;
       const options = {
         destination: destFileName,
       };
-    
+
       // Downloads the file
-      bucket.file('images/' + element).download(options);   
+      bucket.file('images/' + element).download(options);
       console.log("download " +element  );
-     
+
   }
 
   }
@@ -225,7 +225,7 @@ function myTimer() {
           var element = document.getElementById('frame');
 
           if (url == "./images/undefined") {
-              
+
               if (document.getElementById("errorMSG")) {
                   document.getElementById("errorMSG").remove();
               }
@@ -266,7 +266,7 @@ function myTimer() {
 window.onload = myTimer;
 
 function hideCursor(){
-   // document.body.style.cursor = "none";
+    document.body.style.cursor = "none";
 }
 setTimeout(hideCursor,1000);
 
