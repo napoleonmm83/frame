@@ -1,47 +1,3 @@
-# frame
-
-
-
-
-
-```bash
-# Clone this repository
-git clone https://github.com/napoleonmm83/frame
-# Go into the repository
-cd frame
-# Install dependencies
-npm install
-# Run the app
-npm start
-```
-
-
-
-## copy firebase.json to Raspberry
-```bash
-scp friebase.json pi@192.168.1.3:frame
-```
-
-
-```bash
-
-cd /home/pi/frame
-export DISPLAY=:0
-npm start
-
-
-
-@reboot sh /home/pi/frame.sh
-
-```
-
-
-
-## License
-
-[CC0 1.0 (Public Domain)](LICENSE.md)
-
-
 <div id="top"></div>
 
 [![Contributors][contributors-shield]][contributors-url]
@@ -186,7 +142,7 @@ _Below is the guide to install frame._
   scp firebase.json pi@192.168.xx.xx:frame
   ```
 
-5. Move   
+5.   
 
 
 
