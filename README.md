@@ -151,7 +151,7 @@ _Below is the guide to install frame._
 
   ```
 
-  Edit /etc/xdg/lxsession/LXDE/autostart
+  Edit /etc/xdg/lxsession/LXDE-pi/autostart
 
   ```sh
   @xset s off

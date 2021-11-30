@@ -8,16 +8,19 @@ const { getStorage } = require('firebase-admin/storage');
 const got = require("got");
 var fs = require('fs');
 
+
 var dirPath = './images/';
 local_array = [];
 remote_array = [];
+
+
 
 
 const serviceAccount = require('./firebase.json');
 
  initializeApp({
   credential: cert(serviceAccount),
-  storageBucket: 'my-piframe.appspot.com'
+  storageBucket: 'xxx.appspot.com'
 });
 
 
