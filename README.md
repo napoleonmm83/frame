@@ -120,13 +120,14 @@ _Below is the guide to install frame._
    ```sh
    cd /home/pi
    git clone https://github.com/napoleonmm83/frame.git
+   cd frame
    ```
 2. Install NPM packages
    ```sh
-   cd frame
    npm install
    ```
 3. Generate a private key file for your service account:
+
       3.1 In the Firebase console, open Settings > Service Accounts.
 
       3.2 Click Generate New Private Key, then confirm by clicking Generate Key.
@@ -135,7 +136,8 @@ _Below is the guide to install frame._
 
 4. Add private key to frame
 
-    rename the json file to firebase.json
+    Rename the json file to firebase.json.
+
     _This is working with Windows CMD. Replace ip with your rasperry ip._
 
   ```sh
