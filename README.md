@@ -126,7 +126,7 @@ _Below is the guide to install frame._
    ```sh
    npm install
    ```
-3. Generate a private key file for your service account:
+3. Generate a private key file for your service account.
 
       3.1 In the Firebase console, open Settings > Service Accounts.
 
@@ -144,8 +144,23 @@ _Below is the guide to install frame._
   scp firebase.json pi@192.168.xx.xx:frame
   ```
 
-5.   
+5. Prepare Autostart and disable screensaver.
 
+  ```sh
+  sudo apt install x11-xserver-utils unclutter
+
+  ```
+
+  Edit /etc/xdg/lxsession/LXDE/autostart
+
+  ```sh
+  @xset s off
+  @xset -dpms
+  @xset s noblank
+  @xscreensaver -no-splash
+  @sh /home/pi/frame/framestarter.sh
+
+  ```
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
