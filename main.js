@@ -23,8 +23,9 @@ function createWindow () {
   const mainWindow = new BrowserWindow({
 
     width: 1920,
-    height: 1080,
-    frame:false,
+     height: 1080,
+     frame:false,
+     fullscreen:true,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     }
@@ -32,8 +33,7 @@ function createWindow () {
 //mainWindow.webContents.openDevTools()
   // and load the index.html of the app.
   mainWindow.loadFile('index.html')
-mainWindow.maximize();
-mainWindow.setKiosk(true);
+
   // Open the DevTools.
  //mainWindow.webContents.openDevTools()
 }
